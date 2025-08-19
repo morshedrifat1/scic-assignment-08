@@ -1,10 +1,9 @@
 // problem 1 : Write a function that takes a string and returns it reversed.
 
 const reversedString = (string) => {
-  const stringArray = string.split("");
   let reversed = [];
-  for (let i = 0; i < stringArray.length; i++) {
-    reversed.unshift(stringArray[i]);
+  for (let i = 0; i < string.length; i++) {
+    reversed.unshift(string[i]);
   }
   return reversed.join("");
 };
@@ -24,6 +23,31 @@ const countVowels = (string) => {
 };
 
 console.log("Total Vowels =", countVowels("morshedrifat"));
+
+// Problem 3: Check for Palindrome
+// Write a function that checks if a string is a palindrome (reads the same forward and backward).
+
+// Example:
+
+// Input: "madam"
+// Output: true
+// Input: "hello"
+// Output: false
+
+const palindrome = (str) => {
+  let reversed = [];
+  for (let i = 0; i < str.length; i++) {
+    reversed.unshift(str[i]);
+  }
+  const reversedString = reversed.join("");
+  if (reversedString === str) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log("palindrome = ", palindrome("madammm"));
 
 // Problem 4: Write a function that takes an array of numbers and returns the largest number.
 
@@ -83,18 +107,47 @@ const evenNumber = (num) => {
 const allNum = [1, 2, 3, 4, 5, 6, 8, 10];
 console.log("Even Numbers = ", evenNumber(allNum));
 
-
-// Problem 8: Capitalize First Letter of Each Word
-// Write a function that capitalizes the first letter of each word in a string.
-
-// Example:
-
-// Input: "hello world"
-// Output: "Hello World"
+// Problem 8: Write a function that capitalizes the first letter of each word in a string.
 
 const capitalize = (string) => {
-    const capitalize = string.split(" ").map((word) => word[0].toUpperCase()+word.slice(1)).join(' ');
-    return capitalize
-}
+  const word = string.split(" ");
+  let result = [];
+  for (let i = 0; i < word.length; i++) {
+    result.push(word[i][0].toUpperCase() + word[i].slice(1));
+  }
+  return result.join(" ");
+};
 
-console.log("Capitalize Text = ",capitalize('morshed rifat'));
+console.log("Capitalize Text = ", capitalize("morshed rifat"));
+
+// Problem 9: Write a function that calculates the factorial of a number using a loop.
+
+const factorialNum = (num) => {
+  let result = 1;
+  for (let i = 1; i <= num; i++) {
+    result = result * i;
+  }
+  return result;
+};
+
+console.log("Factorial Number = ", factorialNum(5));
+
+// Problem 10: Write a function that prints numbers from 1 to 20.
+
+const pingPong = (num) => {
+  let result = [];
+  for (let i = 1; i <= num; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      result.push("PingPong");
+    } else if (i % 3 === 0) {
+      result.push("ping");
+    } else if (i % 5 === 0) {
+      result.push("pong");
+    } else {
+      result.push(i);
+    }
+  }
+  return result;
+};
+
+console.log("PingPong Challenge = ", pingPong(20));
