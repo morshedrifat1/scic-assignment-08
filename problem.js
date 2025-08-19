@@ -24,15 +24,7 @@ const countVowels = (string) => {
 
 console.log("Total Vowels =", countVowels("morshedrifat"));
 
-// Problem 3: Check for Palindrome
-// Write a function that checks if a string is a palindrome (reads the same forward and backward).
-
-// Example:
-
-// Input: "madam"
-// Output: true
-// Input: "hello"
-// Output: false
+// Problem 3: Write a function that checks if a string is a palindrome (reads the same forward and backward).
 
 const palindrome = (str) => {
   let reversed = [];
